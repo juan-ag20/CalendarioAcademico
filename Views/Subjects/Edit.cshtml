@@ -1,0 +1,3 @@
+@model Subject
+@{ ViewData["Title"]=Model.Id==0?"Nueva materia":"Editar materia"; }
+<h1>@ViewData["Title"]</h1><form method="post" asp-action="Edit" class="editor"><div asp-validation-summary="All" class="errors"></div><input asp-for="Id" type="hidden"/><label>Nombre<input asp-for="Name" required maxlength="100"/></label><label>Profesor<input asp-for="Teacher"/></label><div class="two"><label>Horario<input asp-for="Schedule" placeholder="Lunes, 8:00 a 10:00"/></label><label>Salón<input asp-for="Room"/></label></div><label>Descripción<textarea asp-for="Description"></textarea></label><div class="actions"><button>Guardar materia</button><a asp-action="Index">Cancelar</a></div></form>

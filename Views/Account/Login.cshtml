@@ -1,0 +1,3 @@
+@model AccountForm
+@{ ViewData["Title"] = "Inicia sesión"; }
+<div class="auth"><p class="eyebrow">BIENVENIDO A TU ESPACIO ACADÉMICO</p><h1>Inicia sesión</h1><p class="muted">Organiza tus materias y llega a tiempo a cada entrega.</p><form method="post" asp-action="Login"><div asp-validation-summary="All" class="errors"></div><label>Correo electrónico<input asp-for="Email" type="email" autocomplete="email" required/></label><label>Contraseña<input asp-for="Password" type="password" autocomplete="current-password" minlength="8" required/></label><button>Inicia sesión</button></form><p><a asp-action="Register">Crear una cuenta →</a></p></div>

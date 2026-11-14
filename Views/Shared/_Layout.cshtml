@@ -1,0 +1,6 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>@ViewData["Title"] · AulaAgenda</title><link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/></head>
+<body><aside><a class="brand" asp-controller="Home" asp-action="Index"><span>▦</span> AulaAgenda</a><p class="muted">Tu semestre, en orden.</p>
+@if(User.Identity?.IsAuthenticated == true) {
+<nav><a asp-controller="Home" asp-action="Index">▦ Calendario</a><a asp-controller="Subjects" asp-action="Index">▤ Mis materias</a><a asp-controller="Activities" asp-action="Index">✓ Actividades y apuntes</a></nav><div class="profile"><strong>@User.Identity.Name</strong><small>Espacio de estudiante</small><form asp-controller="Account" asp-action="Logout" method="post"><button class="secondary">Cerrar sesión</button></form></div>
+}</aside><main>@RenderBody()</main></body></html>
